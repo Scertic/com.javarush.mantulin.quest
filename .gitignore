@@ -5,9 +5,7 @@ target/
 
 ### IntelliJ IDEA ###
 .idea/
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.smarttomcat/
 *.iws
 *.iml
 *.ipr
