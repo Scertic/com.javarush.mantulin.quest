@@ -10,41 +10,8 @@
       <link rel="stylesheet" href="http://lte.omsdb.ru/plugins/fontawesome-free/css/all.min.css">
       <!-- Theme style -->
       <link rel="stylesheet" href="https://lte.omsdb.ru/dist/css/adminlte.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .menu {
-            float: left;
-            width: 20%;
-        }
-
-        .main {
-            float: left;
-            width: 60%;
-            padding: 0 20px;
-        }
-
-        .right {
-            float: left;
-            width: 20%;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .menu, .main, .right {
-                width: 100%;
-            }
-        }
-
-        body {
-            padding:5px;
-        }
-
-        .btn-group-vertical {
-            width: 100%;
-        }
-    </style>
+    <link rel="icon" href="${pageContext.request.contextPath}/img.png">
+          <link rel="stylesheet" href="${pageContext.request.contextPath}/css/quest.css">
 </head>
 <body>
     <div style="background-color:#f1f1f1;padding:15px;">
