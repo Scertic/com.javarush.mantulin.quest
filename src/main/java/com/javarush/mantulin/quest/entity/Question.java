@@ -18,11 +18,4 @@ public class Question {
     private String imagePath;
     @JsonIgnore
     private List<Answer> answers;
-
-    public Question(int id, int questId, String text, String imagePath) {
-        this.id = id;
-        this.questId = questId;
-        this.text = text;
-        this.imagePath = imagePath;
-    }
 }

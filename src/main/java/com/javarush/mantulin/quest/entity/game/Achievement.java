@@ -1,18 +1,17 @@
 package com.javarush.mantulin.quest.entity.game;
 
+import lombok.Getter;
+
+@Getter
 public enum Achievement {
 
     WIN("Выиграл: "),
     LOOSE("Проиграл: "),
     FAST_DEAD("Быстрая смерть: ");
-    private String description;
+    private final String description;
 
     Achievement(String description) {
         this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public static void main(String[] args) {

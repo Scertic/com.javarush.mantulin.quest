@@ -2,7 +2,6 @@ package com.javarush.mantulin.quest.repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javarush.mantulin.quest.entity.Quest;
 import com.javarush.mantulin.quest.entity.Question;
 
 import java.io.IOException;
@@ -13,12 +12,7 @@ import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class QuestionRepository implements Repository<Question> {
-    private static final List<Question> STORAGE = new CopyOnWriteArrayList<>();/*{{
-        add(new Question(1,1, "First question", ""));
-        add(new Question(2,1, "Second question", ""));
-        add(new Question(3,1, "Third question", ""));
-        add(new Question(4,1, "Fourth question", ""));
-    }};*/
+    private static final List<Question> STORAGE = new CopyOnWriteArrayList<>();
     static {
         try {
             InputStream inputStream = Thread.currentThread()

@@ -3,7 +3,6 @@ package com.javarush.mantulin.quest.repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javarush.mantulin.quest.entity.Answer;
-import com.javarush.mantulin.quest.entity.Question;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,9 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class AnswerRepository implements Repository<Answer>{
     private static final List<Answer> STORAGE = new CopyOnWriteArrayList<>();
-    /*{{
-        add(new Answer(1, "Answer 1", 1, 3));
-    }};*/
+
     static {
         try {
             InputStream inputStream = Thread.currentThread()

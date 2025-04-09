@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebListener;
 public class AppInitializer implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-//        ServletContextListener.super.contextInitialized(sce);
         QuestRepository questRepo = new QuestRepository();
         QuestionRepository questionRepo = new QuestionRepository();
         AnswerRepository answerRepo = new AnswerRepository();
@@ -21,10 +20,5 @@ public class AppInitializer implements ServletContextListener {
 
         sce.getServletContext().setAttribute("questService", questService);
 
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-        ServletContextListener.super.contextDestroyed(sce);
     }
 }

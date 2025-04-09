@@ -12,11 +12,4 @@ public class Answer {
     private String text;
     private int questionId;
     private int nextQuestionId;
-
-    public Answer(int id, String text, int questionId, int nextQuestionId) {
-        this.id = id;
-        this.text = text;
-        this.questionId = questionId;
-        this.nextQuestionId = nextQuestionId;
-    }
 }

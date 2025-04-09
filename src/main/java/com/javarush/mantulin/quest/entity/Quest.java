@@ -13,9 +13,4 @@ public class Quest {
     private String intro;
     @JsonIgnore
     private List<Question> questions;
-    public Quest(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
 }
