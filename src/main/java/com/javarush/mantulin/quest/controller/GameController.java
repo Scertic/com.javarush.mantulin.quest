@@ -1,6 +1,7 @@
 package com.javarush.mantulin.quest.controller;
 
 import com.javarush.mantulin.quest.entity.Quest;
+import com.javarush.mantulin.quest.entity.game.Achievement;
 import com.javarush.mantulin.quest.entity.game.Player;
 import com.javarush.mantulin.quest.service.QuestService;
 
@@ -28,7 +29,7 @@ public class GameController extends HttpServlet {
         HttpSession currentSession = req.getSession();
 
         player.setName(req.getParameter("playerName"));
-        currentSession.setAttribute("playerName", player);
+        currentSession.setAttribute("player", player);
 
         Quest quest = questService.getInstance(Integer.parseInt(req.getParameter("questId")));
         currentSession.setAttribute("questFull", quest);
@@ -49,8 +50,16 @@ public class GameController extends HttpServlet {
 
         //System.out.println(req.getParameter("questionId"));
         int questionId = Integer.parseInt(req.getParameter("questionId"))-1;
-        if (questionId == -1) {
-            currentSession.setAttribute("loose", 1);
+        if (questionId < 0) {
+            System.out.println(questionId);
+            if (questionId == -1) {
+                currentSession.setAttribute("loose", 1);
+                player.put(Achievement.LOOSE);
+            } else {
+                currentSession.setAttribute("win", 1);
+                player.put(Achievement.WIN);
+            }
+            currentSession.setAttribute("player", player);
             getServletContext().getRequestDispatcher("/view/game.jsp")
                     .forward(req, resp);
         }

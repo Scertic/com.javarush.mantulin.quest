@@ -27,6 +27,7 @@ public class MainController extends HttpServlet {
             List<Quest> quests = questService.getQuests();
             currentSession.setAttribute("quests", quests);
             currentSession.setAttribute("loose", null);
+            currentSession.setAttribute("win", null);
             getServletContext().getRequestDispatcher("/index.jsp")
                             .forward(req, resp);
         }

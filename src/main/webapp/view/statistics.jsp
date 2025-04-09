@@ -52,48 +52,19 @@
 </head>
 <body>
     <div style="background-color:#f1f1f1;padding:15px;">
-        <img src="img.png"/>
-        <h1>Хогвартс выживалити</h1>
-        <c:if test="${player != null}">
+            <img src="/img.png"/>
+            <h1>Хогвартс выживалити</h1>
             <div>
-                <a href="/view/statistics.jsp" class="btn btn-default">Статистика</a>
+                <a href="/" class="btn btn-default">На главную</a>
             </div>
-        </c:if>
     </div>
 
     <div style="overflow:auto">
-        <div class="menu">
-            <!-- Меню будет адаптироваться -->
-            <h1>Квесты:</h1>
-            <div class="btn-group-vertical">
-                <c:forEach var="quest" items="${quests}">
-                    <a href="/quest?questId=${quest.getId()}" class="btn btn-default">${quest.getName()}</a>
-                </c:forEach>
-            </div>
-        </div>
-
         <div class="main">
-            <c:if test="${questSimple != null && questSimple.getName() != null}">
-                <h1>${questSimple.getName()}</h1>
-                <p>${questSimple.getIntro()}</p>
-                <c:if test="${questSimple.getId() == 1}">
-                    <form method="POST" action="/game">
-                    <c:if test="${player == null}">
-                        <input type="text" id="playerName" name="playerName" required>
-                    </c:if>
-                    <c:if test="${player == null}">
-                        <input type="hidden" name="playerName" value="${playerName}">
-                    </c:if>
-                        <input type="hidden" name="questId" value="${questSimple.getId()}">
-                        <button type="submit" class="btn btn-primary">Начать</button>
-                    </form>
-                </c:if>
-            </c:if>
-            <c:if test="${questSimple == null}">
-                <h1>Основной текст</h1>
-                <p>Текст, который адаптируется под экран</p>
-            </c:if>
-
+            <h2>${player.getName()}</h2>
+            <c:forEach var="achievement" items="${player.getRewards().keySet()}">
+                <h3>${achievement.getDescription()}${player.getRewards().get(achievement)}</h3>
+            </c:forEach>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -53,11 +53,15 @@
 
     <div style="overflow:auto">
         <div class="main">
+        <c:if test="${win == 1}">
+                    <h1>Ты победил!</h1>
+                    <a href="/" class="btn btn-default">На главную</a>
+        </c:if>
         <c:if test="${loose == 1}">
             <h1>Ты проиграл!</h1>
             <a href="/" class="btn btn-default">На главную</a>
         </c:if>
-        <c:if test="${loose == null}">
+        <c:if test="${loose == null && win == null}">
             <h2>${questFull.getQuestions().get(questionId).getName()}</h2>
             <p>${questFull.getQuestions().get(questionId).getText()}</p>
             <div>

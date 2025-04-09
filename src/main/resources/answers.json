@@ -99,7 +99,7 @@
     "id": 17,
     "text": "Обманом отвлечь его",
     "questionId": 7,
-    "nextQuestionId": null
+    "nextQuestionId": -1
   },
   {
     "id": 18,
