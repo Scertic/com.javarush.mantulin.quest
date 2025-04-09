@@ -36,52 +36,36 @@
                 width: 100%;
             }
         }
+
         body {
             padding:5px;
         }
+
         .btn-group-vertical {
             width: 100%;
-        }
-        img {
-            width: 70px;
-            display: block;
-            float: left;
-            padding:5px;
         }
     </style>
 </head>
 <body>
     <div style="background-color:#f1f1f1;padding:15px;">
-        <img src="img.png"/>
-        <h1>Хогвартс выживалити</h1>
+        <h1>${questFull.getName()}</h1>
     </div>
 
     <div style="overflow:auto">
-        <div class="menu">
-            <!-- Меню будет адаптироваться -->
-            <h1>Квесты:</h1>
-            <div class="btn-group-vertical">
-                <c:forEach var="quest" items="${quests}">
-                    <a href="/quest?questId=${quest.getId()}" class="btn btn-default">${quest.getName()}</a>
+        <div class="main">
+        <c:if test="${loose == 1}">
+            <h1>Ты проиграл!</h1>
+            <a href="/" class="btn btn-default">На главную</a>
+        </c:if>
+        <c:if test="${loose == null}">
+            <h2>${questFull.getQuestions().get(questionId).getName()}</h2>
+            <p>${questFull.getQuestions().get(questionId).getText()}</p>
+            <div>
+                <c:forEach var="answer" items="${questFull.getQuestions().get(questionId).getAnswers()}">
+                    <a href="/game?questionId=${answer.getNextQuestionId()}" class="btn btn-default">${answer.getText()}</a><br>
                 </c:forEach>
             </div>
-        </div>
-
-        <div class="main">
-            <c:if test="${questSimple != null && questSimple.getName() != null}">
-                <h1>${questSimple.getName()}</h1>
-                <p>${questSimple.getIntro()}</p>
-                <form method="POST" action="/game">
-                    <input type="text" id="playerName" name="playerName" required>
-                    <input type="hidden" name="questId" value="${questSimple.getId()}">
-                    <button type="submit" class="btn btn-primary">Начать</button>
-                </form>
-            </c:if>
-            <c:if test="${questSimple == null}">
-                <h1>Основной текст</h1>
-                <p>Текст, который адаптируется под экран</p>
-            </c:if>
-
+        </c:if>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

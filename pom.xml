@@ -64,7 +64,7 @@
     </dependencies>
 
     <build>
-        <finalName>com.javarush.mantulin.quest</finalName>
+        <finalName>quest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
