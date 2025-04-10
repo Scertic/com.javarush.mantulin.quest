@@ -14,7 +14,7 @@ import java.util.Map;
 public class Player {
     private int id;
     private String name;
-    private Map<Achievement, Integer> rewards = new HashMap<>();
+    private final Map<Achievement, Integer> rewards = new HashMap<>();
 
     public void put(Achievement achievement) {
         rewards.merge(achievement, 1, Integer::sum);

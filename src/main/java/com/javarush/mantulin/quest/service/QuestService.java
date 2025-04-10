@@ -3,19 +3,17 @@ package com.javarush.mantulin.quest.service;
 import com.javarush.mantulin.quest.entity.Answer;
 import com.javarush.mantulin.quest.entity.Quest;
 import com.javarush.mantulin.quest.entity.Question;
-import com.javarush.mantulin.quest.repository.AnswerRepository;
-import com.javarush.mantulin.quest.repository.QuestRepository;
-import com.javarush.mantulin.quest.repository.QuestionRepository;
+import com.javarush.mantulin.quest.repository.*;
 
 import java.util.List;
 
 public class QuestService {
-    private final QuestRepository questRepository;
+    private final Repository<Quest> questRepository;
     private final QuestionRepository questionRepository;
     private final AnswerRepository answerRepository;
 
     public QuestService(
-            QuestRepository questRepository,
+            Repository<Quest> questRepository,
             QuestionRepository questionRepository,
             AnswerRepository answerRepository) {
         this.questRepository = questRepository;

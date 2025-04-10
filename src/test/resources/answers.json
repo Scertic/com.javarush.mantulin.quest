@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "text": "Настоять на Гриффиндоре",
+    "questionId": 1,
+    "nextQuestionId": 2
+  },
+  {
+    "id": 2,
+    "text": "Довериться шляпе (Когтевран)",
+    "questionId": 1,
+    "nextQuestionId": 3
+  },
+  {
+    "id": 3,
+    "text": "Шепнуть о желании в Слизерин",
+    "questionId": 1,
+    "nextQuestionId": 4
+  },
+  {
+    "id": 4,
+    "text": "Попросить в Пуффендуй",
+    "questionId": 1,
+    "nextQuestionId": 5
+  },
+  {
+    "id": 5,
+    "text": "Отказаться от распределения",
+    "questionId": 1,
+    "nextQuestionId": null
+  },
+  {
+    "id": 6,
+    "text": "Согласиться пойти с Гарри",
+    "questionId": 2,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 7,
+    "text": "Предупредить Гермиону",
+    "questionId": 2,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 8,
+    "text": "Прочитать заклинание вслух",
+    "questionId": 3,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 9,
+    "text": "Отнести книгу Дамблдору",
+    "questionId": 3,
+    "nextQuestionId": 7
+  },
+  {
+    "id": 10,
+    "text": "Согласиться помочь Малфою",
+    "questionId": 4,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 11,
+    "text": "Притвориться согласным, но предупредить Гарри",
+    "questionId": 4,
+    "nextQuestionId": 7
+  },
+  {
+    "id": 12,
+    "text": "Осторожно ухаживать за растениями",
+    "questionId": 5,
+    "nextQuestionId": 7
+  },
+  {
+    "id": 13,
+    "text": "Попросить Невилла о помощи",
+    "questionId": 5,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 14,
+    "text": "Играть на флейте, чтобы усыпить пса",
+    "questionId": 6,
+    "nextQuestionId": 7
+  },
+  {
+    "id": 15,
+    "text": "Броситься в бой",
+    "questionId": 6,
+    "nextQuestionId": null
+  },
+  {
+    "id": 16,
+    "text": "Атаковать Квиррелла",
+    "questionId": 7,
+    "nextQuestionId": null
+  },
+  {
+    "id": 17,
+    "text": "Обманом отвлечь его",
+    "questionId": 7,
+    "nextQuestionId": -1
+  },
+  {
+    "id": 18,
+    "text": "Присоединиться к нему",
+    "questionId": 7,
+    "nextQuestionId": null
+  }
+]

@@ -15,7 +15,6 @@ public class Question {
     private int questId;
     private String name;
     private String text;
-    private String imagePath;
     @JsonIgnore
     private List<Answer> answers;
 }

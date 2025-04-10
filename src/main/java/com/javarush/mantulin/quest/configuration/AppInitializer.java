@@ -1,8 +1,10 @@
 package com.javarush.mantulin.quest.configuration;
 
-import com.javarush.mantulin.quest.repository.AnswerRepository;
+import com.javarush.mantulin.quest.entity.Quest;
+import com.javarush.mantulin.quest.repository.AnswerRepositoryImpl;
 import com.javarush.mantulin.quest.repository.QuestRepository;
-import com.javarush.mantulin.quest.repository.QuestionRepository;
+import com.javarush.mantulin.quest.repository.QuestionRepositoryImpl;
+import com.javarush.mantulin.quest.repository.Repository;
 import com.javarush.mantulin.quest.service.QuestService;
 
 import javax.servlet.ServletContextEvent;
@@ -14,8 +16,8 @@ public class AppInitializer implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         QuestRepository questRepo = new QuestRepository();
-        QuestionRepository questionRepo = new QuestionRepository();
-        AnswerRepository answerRepo = new AnswerRepository();
+        QuestionRepositoryImpl questionRepo = new QuestionRepositoryImpl();
+        AnswerRepositoryImpl answerRepo = new AnswerRepositoryImpl();
         QuestService questService = new QuestService(questRepo, questionRepo, answerRepo);
 
         sce.getServletContext().setAttribute("questService", questService);
