@@ -1,11 +1,7 @@
 package com.javarush.mantulin.quest.util;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.javarush.mantulin.quest.entity.Quest;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

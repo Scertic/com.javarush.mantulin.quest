@@ -1,7 +1,5 @@
 package com.javarush.mantulin.quest.configuration;
 
-import com.javarush.mantulin.quest.entity.Quest;
-import com.javarush.mantulin.quest.repository.*;
 import com.javarush.mantulin.quest.service.QuestService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

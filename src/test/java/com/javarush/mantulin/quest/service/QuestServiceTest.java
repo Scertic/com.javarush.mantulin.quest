@@ -6,11 +6,9 @@ import com.javarush.mantulin.quest.entity.Question;
 import com.javarush.mantulin.quest.repository.AnswerRepository;
 import com.javarush.mantulin.quest.repository.QuestRepository;
 import com.javarush.mantulin.quest.repository.QuestionRepository;
-import com.javarush.mantulin.quest.repository.QuestionRepositoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

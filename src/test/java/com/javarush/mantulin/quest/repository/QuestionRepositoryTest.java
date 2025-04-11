@@ -1,7 +1,5 @@
 package com.javarush.mantulin.quest.repository;
 
-import com.javarush.mantulin.quest.entity.Answer;
-import com.javarush.mantulin.quest.entity.Quest;
 import com.javarush.mantulin.quest.entity.Question;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +24,7 @@ class QuestionRepositoryTest {
     void getAll_shouldReturnUnmodifiableList() {
         questionRepository = new QuestionRepositoryImpl();
         List<Question> all = questionRepository.getAll();
-        assertThrows(UnsupportedOperationException.class, ()->{all.add(100, mock(Question.class));});
+        assertThrows(UnsupportedOperationException.class, ()-> all.add(100, mock(Question.class)));
     }
 
     @Test

@@ -31,7 +31,7 @@ class GameControllerTest {
     private HttpSession session;
     private ServletContext servletContext;
     private RequestDispatcher requestDispatcher;
-    private ServletConfig servletConfig;
+
     @BeforeEach
     void init() throws ServletException {
         questService = mock(QuestService.class);
@@ -40,7 +40,7 @@ class GameControllerTest {
         session = mock(HttpSession.class);
         servletContext = mock(ServletContext.class);
         requestDispatcher = mock(RequestDispatcher.class);
-        servletConfig = mock(ServletConfig.class);
+        ServletConfig servletConfig = mock(ServletConfig.class);
 
         when(servletConfig.getServletContext()).thenReturn(servletContext);
         when(servletContext.getAttribute("questService")).thenReturn(questService);

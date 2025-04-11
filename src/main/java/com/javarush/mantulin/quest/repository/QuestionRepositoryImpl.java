@@ -1,13 +1,8 @@
 package com.javarush.mantulin.quest.repository;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javarush.mantulin.quest.entity.Quest;
 import com.javarush.mantulin.quest.entity.Question;
 import com.javarush.mantulin.quest.util.JsonLoader;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
