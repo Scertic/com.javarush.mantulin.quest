@@ -1,16 +1,10 @@
 package com.javarush.mantulin.quest.util;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javarush.mantulin.quest.entity.Quest;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-//TODO под вопросом
 public class JsonLoader {
     public static <T> List<T> loadFromJson(String filename, Class<T> type) {
         try (InputStream inputStream = Thread.currentThread()

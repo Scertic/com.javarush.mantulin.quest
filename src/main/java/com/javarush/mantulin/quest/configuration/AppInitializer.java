@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebListener;
 public class AppInitializer implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        QuestRepository questRepo = new QuestRepository();
+        Repository<Quest> questRepo = new QuestRepository();
         QuestionRepositoryImpl questionRepo = new QuestionRepositoryImpl();
         AnswerRepositoryImpl answerRepo = new AnswerRepositoryImpl();
         QuestService questService = new QuestService(questRepo, questionRepo, answerRepo);

@@ -11,7 +11,7 @@ import static org.mockito.Mockito.mock;
 
 class QuestRepositoryTest {
 
-    QuestRepository questRepository;
+    Repository<Quest> questRepository;
 
     @Test
     void findById_shouldReturnOptional() {

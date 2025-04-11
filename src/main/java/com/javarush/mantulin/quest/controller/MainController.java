@@ -15,10 +15,12 @@ import java.util.List;
 @WebServlet({"", "/quest"})
 public class MainController extends HttpServlet {
     private QuestService questService;
+
     @Override
-    public void init() throws ServletException {
+    public void init() {
         this.questService = (QuestService) getServletContext().getAttribute("questService");
     }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
@@ -29,16 +31,16 @@ public class MainController extends HttpServlet {
             currentSession.setAttribute("loose", null);
             currentSession.setAttribute("win", null);
             getServletContext().getRequestDispatcher("/index.jsp")
-                            .forward(req, resp);
+                    .forward(req, resp);
         }
-        if (requestURI.startsWith("/quest")) {
+        if ("/quest".equals(requestURI)) {
             try {
                 int questId = Integer.parseInt(req.getParameter("questId"));
                 Quest byId = questService.findById(questId);
                 currentSession.setAttribute("questSimple", byId);
                 resp.sendRedirect("/");
             } catch (Exception e) {
-
+                resp.sendRedirect("/quest?questId=1");
             }
 
         }

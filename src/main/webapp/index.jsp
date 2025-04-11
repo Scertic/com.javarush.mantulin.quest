@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Адаптивный сайт</title>
+    <title>Хогвартс выживалити}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
       <link rel="icon" href="${pageContext.request.contextPath}/img.png">
@@ -38,7 +38,7 @@
                 <c:if test="${questSimple.getId() == 1}">
                     <form method="POST" action="/game">
                     <c:if test="${player == null}">
-                        <input type="text" id="playerName" name="playerName" required>
+                        <input class="form-control" type="text" id="playerName" name="playerName" required>
                     </c:if>
                     <c:if test="${player == null}">
                         <input type="hidden" name="playerName" value="${playerName}">
@@ -49,8 +49,38 @@
                 </c:if>
             </c:if>
             <c:if test="${questSimple == null}">
-                <h1>Основной текст</h1>
-                <p>Текст, который адаптируется под экран</p>
+                <h1>Добро пожаловать!</h1>
+                <div class="features">
+                        <h3>🔮 Что тебя ждёт:</h3>
+                        <ul>
+                            <li><strong>5 ключевых шагов</strong> до финала — от Распределяющей Шляпы до встречи с самим Волан-де-Мортом.</li>
+                            <li><strong>4 факультета</strong> с уникальными сюжетами:
+                                <ul>
+                                    <li><em>Гриффиндор</em>: Авантюры и битвы бок о бок с Гарри.</li>
+                                    <li><em>Слизерин</em>: Интриги и тёмные сделки с Малфоем.</li>
+                                    <li><em>Когтевран</em>: Тайны, загадки и древние проклятия.</li>
+                                    <li><em>Пуффендуй</em>: Верность, дружба и <i>неожиданная храбрость</i>.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Судьбоносные выборы</strong>:
+                                <ul>
+                                    <li>Спасти друга или предать?</li>
+                                    <li>Довериться шляпе или настоять на своём?</li>
+                                    <li>Стать героем… или тем, о ком шепчутся в коридорах.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="rules">
+                        <h3>⚡ Правила:</h3>
+                        <ul>
+                            <li>Каждое решение <em>меняет историю</em>.</li>
+                            <li><em>Смерть и отчисление</em> — реальны.</li>
+                            <li>Некоторые пути <em>откроются лишь самым упорным</em>.</li>
+                        </ul>
+                    </div>
+
             </c:if>
 
         </div>

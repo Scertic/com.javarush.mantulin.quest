@@ -16,20 +16,22 @@ import java.io.IOException;
 @WebServlet("/game")
 public class GameController extends HttpServlet {
     private QuestService questService;
-    private Player player;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         this.questService = (QuestService) getServletContext().getAttribute("questService");
-        this.player = new Player();
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
 
-        player.setName(req.getParameter("playerName"));
-        currentSession.setAttribute("player", player);
+        Player player = (Player) currentSession.getAttribute("player");
+        if (player == null) {
+            player = new Player();
+            player.setName(req.getParameter("playerName"));
+            currentSession.setAttribute("player", player);
+        }
 
         Quest quest = questService.getInstance(Integer.parseInt(req.getParameter("questId")));
         currentSession.setAttribute("questFull", quest);
@@ -48,10 +50,9 @@ public class GameController extends HttpServlet {
             return;
         }
 
-        //System.out.println(req.getParameter("questionId"));
+        Player player = (Player) req.getSession().getAttribute("player");
         int questionId = Integer.parseInt(req.getParameter("questionId"))-1;
         if (questionId < 0) {
-            System.out.println(questionId);
             if (questionId == -1) {
                 currentSession.setAttribute("loose", 1);
                 player.put(Achievement.LOOSE);
