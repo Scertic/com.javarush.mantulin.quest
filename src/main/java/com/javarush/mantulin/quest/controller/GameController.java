@@ -25,6 +25,7 @@ public class GameController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
+        req.setCharacterEncoding("UTF-8");
 
         Player player = (Player) currentSession.getAttribute("player");
         if (player == null) {
@@ -44,6 +45,8 @@ public class GameController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         if (req.getParameter("questionId") == null) {
             getServletContext().getRequestDispatcher("/view/game.jsp")
                     .forward(req, resp);
